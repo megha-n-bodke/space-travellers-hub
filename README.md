@@ -1,1 +1,2 @@
 token - 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
+bash copy_github_board.sh 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 microverseinc curriculum-react-redux megha-n-bodke space-travellers-hub
