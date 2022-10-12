@@ -1,19 +1,9 @@
 import React from "react";
-import { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { missionData } from "../../redux/Missions/missions";
 
 const Missions = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    useDispatch(missionData());
-  }, []);
-  const stateData = useSelector((state) => state);
-  console.log(stateData);
-
   return (
     <div>
-      <table class="table table-striped">
+      <table className="table table-striped">
         <thead>
           <tr>
             <th scope="col">Mission</th>
