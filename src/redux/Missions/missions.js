@@ -1,12 +1,12 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // actions
-const SHOW_MISSIONS = 'SHOW_MISSIONS';
-const JOIN_MISSION = 'JOIN_MISSION';
-const LEAVE_MISSION = 'LEAVE_MISSION';
+const SHOW_MISSIONS = "SHOW_MISSIONS";
+const JOIN_MISSION = "JOIN_MISSION";
+const LEAVE_MISSION = "LEAVE_MISSION";
 
-const baseAPI = 'https://api.spacexdata.com/v3/missions';
+const baseAPI = "https://api.spacexdata.com/v3/missions";
 
 // thunk
 export const missionData = createAsyncThunk(
@@ -18,17 +18,52 @@ export const missionData = createAsyncThunk(
       type: SHOW_MISSIONS,
       payload: data,
     });
-  },
+  }
 );
+
+export const joinMission = (id) => (dispatch) => {
+  dispatch({
+    type: JOIN_MISSION,
+    payload: id,
+  });
+};
+
+export const leaveMission = (id) => (dispatch) => {
+  dispatch({
+    type: LEAVE_MISSION,
+    payload: id,
+  });
+};
 
 // reducer
 const missions = [];
+//const initialState = { missions: [] };
 export const missionsReducer = (state = missions, action) => {
   switch (action.type) {
     case SHOW_MISSIONS:
       return {
         ...state,
         missions: action.payload,
+      };
+
+    case JOIN_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) =>
+          mission.mission_id !== action.payload
+            ? mission
+            : { ...mission, joined: true }
+        ),
+      };
+
+    case LEAVE_MISSION:
+      return {
+        ...state,
+        missions: state.missions.map((mission) =>
+          mission.mission_id !== action.payload
+            ? mission
+            : { ...mission, joined: false }
+        ),
       };
 
     default:

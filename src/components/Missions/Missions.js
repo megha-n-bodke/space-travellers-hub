@@ -1,6 +1,24 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { joinMission, leaveMission } from "../../redux/Missions/missions";
+// import { missionData } from "../../redux/Missions/missions";
 
 const Missions = () => {
+  const { missions } = useSelector((state) => state.missions);
+  console.log(typeof missions);
+  console.log(missions);
+
+  const dispatch = useDispatch();
+  const clickHandler = (id) => {
+    dispatch(joinMission(id));
+  };
+
+  const leaveHandle = (id) => {
+    console.log("in leave");
+    dispatch(leaveMission(id));
+    console.log(missions.joined);
+  };
+
   return (
     <div>
       <table className="table table-striped">
@@ -13,12 +31,33 @@ const Missions = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
+          {missions?.map((singleMission) => (
+            <tr key={missions.mission_id}>
+              <td>{singleMission.mission_name}</td>
+              <td>{singleMission.description}</td>
+              <td></td>
+              {singleMission.joined ? (
+                <td>
+                  <button
+                    type="submit"
+                    onClick={() => leaveHandle(singleMission.mission_id)}
+                  >
+                    Leave Mission
+                  </button>
+                </td>
+              ) : (
+                <td>
+                  {" "}
+                  <button
+                    type="submit"
+                    onClick={() => clickHandler(singleMission.mission_id)}
+                  >
+                    Join Mission
+                  </button>
+                </td>
+              )}
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
