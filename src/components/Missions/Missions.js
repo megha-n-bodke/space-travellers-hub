@@ -35,26 +35,37 @@ const Missions = () => {
             <tr key={missions.mission_id}>
               <td>{singleMission.mission_name}</td>
               <td>{singleMission.description}</td>
-              <td></td>
+
               {singleMission.joined ? (
-                <td>
-                  <button
-                    type="submit"
-                    onClick={() => leaveHandle(singleMission.mission_id)}
-                  >
-                    Leave Mission
-                  </button>
-                </td>
+                <>
+                  <td>
+                    <span class="badge bg-info text-dark">Active Member</span>
+                  </td>
+                  <td>
+                    <button
+                      type="submit"
+                      className="btn btn-outline-danger"
+                      onClick={() => leaveHandle(singleMission.mission_id)}
+                    >
+                      Leave Mission
+                    </button>
+                  </td>
+                </>
               ) : (
-                <td>
-                  {" "}
-                  <button
-                    type="submit"
-                    onClick={() => clickHandler(singleMission.mission_id)}
-                  >
-                    Join Mission
-                  </button>
-                </td>
+                <>
+                  <td>
+                    <span class="badge bg-secondary">Not A Member</span>
+                  </td>
+                  <td>
+                    {" "}
+                    <button
+                      className="btn btn-outline-secondary"
+                      onClick={() => clickHandler(singleMission.mission_id)}
+                    >
+                      Join Mission
+                    </button>
+                  </td>
+                </>
               )}
             </tr>
           ))}
