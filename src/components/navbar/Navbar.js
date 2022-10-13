@@ -16,7 +16,6 @@ const Navbar = () => (
       <Link className="nav-link" activeclassname="active" to="/MyProfile">My Profile</Link>
     </nav>
   </div>
-
 );
 
 export default Navbar;
