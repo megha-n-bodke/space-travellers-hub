@@ -40,6 +40,10 @@
   text-decoration: none;
 }
 
+.me {
+  background-color: aquamarine;
+}
+
 hr {
   border: solid 1px rgb(0, 0, 0);
   height: 20px;
