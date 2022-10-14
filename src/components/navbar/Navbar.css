@@ -40,8 +40,9 @@
   text-decoration: none;
 }
 
-.active {
+.link-active {
   text-decoration: underline;
+  color: chartreuse;
 }
 
 hr {
