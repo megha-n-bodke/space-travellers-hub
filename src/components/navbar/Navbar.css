@@ -40,11 +40,6 @@
   text-decoration: none;
 }
 
-.link-active {
-  text-decoration: underline;
-  color: chartreuse;
-}
-
 hr {
   border: solid 1px rgb(0, 0, 0);
   height: 20px;
