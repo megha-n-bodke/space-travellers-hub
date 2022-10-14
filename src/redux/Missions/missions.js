@@ -38,7 +38,7 @@ export const leaveMission = (id) => (dispatch) => {
 // reducer
 const missions = [];
 //const initialState = { missions: [] };
-export const missionsReducer = (state = missions, action) => {
+const missionsReducer = (state = missions, action) => {
   switch (action.type) {
     case SHOW_MISSIONS:
       return {
@@ -70,3 +70,5 @@ export const missionsReducer = (state = missions, action) => {
       return state;
   }
 };
+
+export default missionsReducer;
