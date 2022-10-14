@@ -1,12 +1,12 @@
-import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 // actions
-const SHOW_MISSIONS = "SHOW_MISSIONS";
-const JOIN_MISSION = "JOIN_MISSION";
-const LEAVE_MISSION = "LEAVE_MISSION";
+const SHOW_MISSIONS = 'SHOW_MISSIONS';
+const JOIN_MISSION = 'JOIN_MISSION';
+const LEAVE_MISSION = 'LEAVE_MISSION';
 
-const baseAPI = "https://api.spacexdata.com/v3/missions";
+const baseAPI = 'https://api.spacexdata.com/v3/missions';
 
 // thunk
 export const missionData = createAsyncThunk(
@@ -18,7 +18,7 @@ export const missionData = createAsyncThunk(
       type: SHOW_MISSIONS,
       payload: data,
     });
-  }
+  },
 );
 
 export const joinMission = (id) => (dispatch) => {
@@ -36,9 +36,9 @@ export const leaveMission = (id) => (dispatch) => {
 };
 
 // reducer
-const missions = [];
-//const initialState = { missions: [] };
-const missionsReducer = (state = missions, action) => {
+
+const initialState = { missions: [] };
+const missionsReducer = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_MISSIONS:
       return {
@@ -49,21 +49,17 @@ const missionsReducer = (state = missions, action) => {
     case JOIN_MISSION:
       return {
         ...state,
-        missions: state.missions.map((mission) =>
-          mission.mission_id !== action.payload
-            ? mission
-            : { ...mission, joined: true }
-        ),
+        missions: state.missions.map((mission) => (mission.mission_id !== action.payload
+          ? mission
+          : { ...mission, joined: true })),
       };
 
     case LEAVE_MISSION:
       return {
         ...state,
-        missions: state.missions.map((mission) =>
-          mission.mission_id !== action.payload
-            ? mission
-            : { ...mission, joined: false }
-        ),
+        missions: state.missions.map((mission) => (mission.mission_id !== action.payload
+          ? mission
+          : { ...mission, joined: false })),
       };
 
     default:

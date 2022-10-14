@@ -1,26 +1,20 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { joinMission, leaveMission } from "../../redux/Missions/missions";
-// import { missionData } from "../../redux/Missions/missions";
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../../redux/Missions/missions';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
-  console.log(typeof missions);
-  console.log(missions);
-
   const dispatch = useDispatch();
   const clickHandler = (id) => {
     dispatch(joinMission(id));
   };
 
   const leaveHandle = (id) => {
-    console.log("in leave");
     dispatch(leaveMission(id));
-    console.log(missions.joined);
   };
 
   return (
-    <div>
+    <div className="mission-page">
       <table className="table table-striped">
         <thead>
           <tr>
@@ -39,11 +33,13 @@ const Missions = () => {
               {singleMission.joined ? (
                 <>
                   <td>
-                    <span class="badge bg-info text-dark">Active Member</span>
+                    <span className="badge bg-info text-dark">
+                      Active Member
+                    </span>
                   </td>
                   <td>
                     <button
-                      type="submit"
+                      type="button"
                       className="btn btn-outline-danger"
                       onClick={() => leaveHandle(singleMission.mission_id)}
                     >
@@ -54,11 +50,12 @@ const Missions = () => {
               ) : (
                 <>
                   <td>
-                    <span class="badge bg-secondary">Not A Member</span>
+                    <span className="badge bg-secondary">Not A Member</span>
                   </td>
                   <td>
-                    {" "}
+                    {' '}
                     <button
+                      type="button"
                       className="btn btn-outline-secondary"
                       onClick={() => clickHandler(singleMission.mission_id)}
                     >
