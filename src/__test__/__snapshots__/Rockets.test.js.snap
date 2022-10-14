@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check any changes to the component 1`] = `
+<div
+  data-testid="list-of-rockets"
+>
+  <ul />
+</div>
+`;

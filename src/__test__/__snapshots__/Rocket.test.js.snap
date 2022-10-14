@@ -2,8 +2,29 @@
 
 exports[`Check any changes to the component 1`] = `
 <div
-  data-testid="list-of-rockets"
+  className="context"
+  data-testid="rocket"
 >
-  <ul />
+  <img
+    alt="user"
+    className="img"
+  />
+  <div
+    className="data"
+  >
+    <h2
+      className="title"
+    />
+    <p
+      className="dec"
+    />
+    <button
+      className="btn-enabled"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve
+    </button>
+  </div>
 </div>
 `;

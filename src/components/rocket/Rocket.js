@@ -27,7 +27,7 @@ const Rocket = (props) => {
     dispatch(cancelReservation(rocketTitle));
   };
   return (
-    <div className="context">
+    <div className="context" data-testid="rocket">
       <img className="img" src={image} alt="user" />
       <div className="data">
         <h2 className="title">{name}</h2>
