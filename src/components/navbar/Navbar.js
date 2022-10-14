@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import logo from "../../images/logo.png";
-import "./Navbar.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import logo from '../../images/logo.png';
+import './Navbar.css';
 
 const Navbar = () => (
   <div className="header">
