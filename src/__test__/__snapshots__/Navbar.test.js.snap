@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Header /> renders properly as expected 1`] = `
+exports[`Check any changes to the component 1`] = `
 <div
   className="header"
 >
