@@ -11,7 +11,7 @@ const Navbar = () => (
     </div>
     <nav className="nav-des">
       <Link className="nav-link" activeclassname="active" to="/">Rockets</Link>
-      <Link className="nav-link" activeclassname="active" to="/Missions">Missions</Link>
+      {/* <Link className="nav-link" activeclassname="active" to="/Missions">Missions</Link> */}
       <hr />
       <Link className="nav-link" activeclassname="active" to="/MyProfile">My Profile</Link>
     </nav>
