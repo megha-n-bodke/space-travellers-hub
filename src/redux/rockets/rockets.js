@@ -2,22 +2,17 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const GET_ROCKETS = 'rockets/rockets/GET_ROCKETS';
 const initialState = [];
-
+const url = 'https://api.spacexdata.com/v3/rockets';
 // thunk
 export const getRockets = createAsyncThunk(
   GET_ROCKETS,
   async (args, { dispatch }) => {
-    const response = await fetch('https://api.spacexdata.com/v3/rockets');
+    const response = await fetch(url);
     const data = await response.json();
 
-    const rockets = Object.keys(data).map((key) => ({
-      id: key,
-      ...data[key][0],
-    }));
+    dispatch({ type: GET_ROCKETS, rockets: data });
 
-    dispatch({ type: GET_ROCKETS, rockets });
-
-    return rockets;
+    return data;
   },
 );
 
