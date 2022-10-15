@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check any changes to the component 1`] = `
+<div
+  className="context"
+  data-testid="rocket"
+>
+  <img
+    alt="user"
+    className="img"
+  />
+  <div
+    className="data"
+  >
+    <h2
+      className="title"
+    />
+    <p
+      className="dec"
+    />
+    <button
+      className="btn-enabled"
+      onClick={[Function]}
+      type="button"
+    >
+      Reserve
+    </button>
+  </div>
+</div>
+`;

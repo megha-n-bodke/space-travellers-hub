@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Check any changes to the component 1`] = `
+<div
+  className="container"
+  data-testid="container"
+>
+  <div
+    className="reserve"
+  >
+    <tr>
+      <th>
+        <h2
+          className="title"
+        >
+          My Reservations
+        </h2>
+      </th>
+    </tr>
+    <tr />
+  </div>
+  <div
+    className="reserve"
+  >
+    <tr>
+      <th>
+        <h2
+          className="title"
+        >
+          My Reservations
+        </h2>
+      </th>
+    </tr>
+    <tr />
+  </div>
+</div>
+`;
