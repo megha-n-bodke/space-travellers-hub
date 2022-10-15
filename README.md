@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ## space-travellers-hub
 
 This web application is built upon real live data from the SpaceX API. The main purpose is to build a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
@@ -80,7 +79,3 @@ Feel free to check the [issues page](../../issues/).
 # This project is [MIT](./MIT.md) licensed.
 
 _NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
-=======
-token - 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
-bash copy_github_board.sh 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 microverseinc curriculum-react-redux megha-n-bodke space-travellers-hub
->>>>>>> a9161803aad3393a3ba3b92b1e8f3c0ea7534055
