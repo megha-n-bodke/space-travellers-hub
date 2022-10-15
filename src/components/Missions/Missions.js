@@ -1,7 +1,7 @@
-import React from "react";
-import { v4 as uuid } from "uuid";
-import { useSelector, useDispatch } from "react-redux";
-import { joinMission, leaveMission } from "../../redux/Missions/missions";
+import React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useSelector, useDispatch } from 'react-redux';
+import { joinMission, leaveMission } from '../../redux/Missions/missions';
 
 const Missions = () => {
   const { missions } = useSelector((state) => state.missions);
@@ -32,7 +32,7 @@ const Missions = () => {
               <td>{singleMission.description}</td>
 
               {singleMission.joined ? (
-                <React.Fragment>
+                <>
                   <td>
                     <span className="badge bg-info text-dark">
                       Active Member
@@ -47,14 +47,14 @@ const Missions = () => {
                       Leave Mission
                     </button>
                   </td>
-                </React.Fragment>
+                </>
               ) : (
                 <>
                   <td>
                     <span className="badge bg-secondary">Not A Member</span>
                   </td>
                   <td>
-                    {" "}
+                    {' '}
                     <button
                       type="button"
                       className="btn btn-outline-secondary"

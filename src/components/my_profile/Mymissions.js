@@ -1,7 +1,7 @@
-import React from "react";
-import { v4 as uuid } from "uuid";
-import { useSelector } from "react-redux";
-import "./MyProfile.css";
+import React from 'react';
+import { v4 as uuid } from 'uuid';
+import { useSelector } from 'react-redux';
+import './MyProfile.css';
 
 const Mymissions = () => {
   const { missions } = useSelector((state) => state.missions);
@@ -15,12 +15,11 @@ const Mymissions = () => {
       </tr>
       <tr className="reserve-section">
         {missions.map(
-          (mission) =>
-            mission.joined && (
-              <td className="reserve-items" key={uuid()}>
-                {mission.mission_name}
-              </td>
-            )
+          (mission) => mission.joined && (
+          <td className="reserve-items" key={uuid()}>
+            {mission.mission_name}
+          </td>
+          ),
         )}
       </tr>
     </table>
