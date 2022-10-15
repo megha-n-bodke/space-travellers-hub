@@ -10,8 +10,7 @@ const Rockets = () => {
 
   useEffect(() => {
     dispatch(getRockets());
-  },
-  []);
+  }, []);
 
   return (
     <div data-testid="list-of-rockets">
