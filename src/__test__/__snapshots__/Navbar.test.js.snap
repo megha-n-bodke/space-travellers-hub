@@ -21,17 +21,26 @@ exports[`Check any changes to the component 1`] = `
   >
     <a
       activeclassname="active"
-      className="nav-link"
+      aria-current="page"
+      className="nav-link active"
       href="/"
       onClick={[Function]}
     >
       Rockets
     </a>
+    <a
+      activeclassname="active"
+      className="nav-link"
+      href="/missions"
+      onClick={[Function]}
+    >
+      Missions
+    </a>
     <hr />
     <a
       activeclassname="active"
       className="nav-link"
-      href="/MyProfile"
+      href="/my-profile"
       onClick={[Function]}
     >
       My Profile
