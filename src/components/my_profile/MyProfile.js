@@ -1,7 +1,7 @@
-import { useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import Mymissions from "./Mymissions";
-import "./MyProfile.css";
+import { useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import Mymissions from './Mymissions';
+import './MyProfile.css';
 
 export default function Profile() {
   const reserve = useSelector((state) => state.profile.reserved);
