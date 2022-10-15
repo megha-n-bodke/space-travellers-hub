@@ -8,20 +8,21 @@ const Mymissions = () => {
 
   return (
     <table className="reserve">
-      <tr className="join-mission-div">
-        <th>
-          <h2 className="title"> My Missions</h2>
-        </th>
-      </tr>
-      <tr className="reserve-section">
+      <tbody>
+        <tr className="join-mission-div">
+          <th>
+            <h2 className="title"> My Missions</h2>
+          </th>
+        </tr>
+
         {missions.map(
           (mission) => mission.joined && (
-          <td className="reserve-items" key={uuid()}>
-            {mission.mission_name}
-          </td>
+          <tr className="reserve-section" key={uuid()}>
+            <td className="reserve-items">{mission.mission_name}</td>
+          </tr>
           ),
         )}
-      </tr>
+      </tbody>
     </table>
   );
 };
