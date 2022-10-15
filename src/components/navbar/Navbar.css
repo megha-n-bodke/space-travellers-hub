@@ -40,8 +40,8 @@
   text-decoration: none;
 }
 
-.active {
-  text-decoration: underline;
+.me {
+  background-color: palevioletred;
 }
 
 hr {
